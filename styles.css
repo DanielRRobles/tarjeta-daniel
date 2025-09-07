@@ -1,0 +1,192 @@
+/* =========================================
+   VARIABLES DE COLOR (FÁCILES DE CAMBIAR)
+   ========================================= */
+:root{
+  --bg-1: #0b0b14;          /* NEGRO AZULADO */
+  --bg-2: #141427;          /* FONDO TARJETA */
+  --text: #e9e9f6;          /* TEXTO PRINCIPAL */
+  --muted: #a7a7c7;         /* SUBTÍTULOS */
+  --accent: #7a5cf5;        /* LILA TECH */
+  --accent-2: #2ecbff;      /* CIAN TECH */
+  --border: #2a2a44;        /* BORDE DISCRETO */
+}
+
+/* =========================================
+   RESET BÁSICO Y FUENTE DEL SISTEMA
+   ========================================= */
+*,*::before,*::after{ box-sizing:border-box; }
+html,body{ height:100%; margin:0; }
+body{
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial;
+  color: var(--text);
+  background: var(--bg-1);
+}
+
+/* =========================================
+   CENTRADO DE LA TARJETA
+   ========================================= */
+.wrap{
+  min-height:100%;
+  display:grid;
+  place-items:center;
+  padding:24px;
+}
+
+/* =========================================
+   TARJETA PRINCIPAL
+   ========================================= */
+.card{
+  width:100%;
+  max-width:460px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px 20px 20px;
+  box-shadow: 0 16px 36px rgba(0,0,0,.40);
+}
+
+/* =========================================
+   AVATAR CIRCULAR
+   ========================================= */
+.avatar{
+  width:96px; height:96px;
+  margin: 0 auto 10px;
+  border-radius:50%;
+  overflow:hidden;
+  border: 2px solid rgba(46,203,255,.6);  /* CIAN TENUE */
+}
+.avatar img{
+  width:100%; height:100%; object-fit:cover; display:block;
+}
+
+/* =========================================
+   TÍTULOS Y TEXTOS
+   ========================================= */
+.title{
+  text-align:center;
+  margin: 2px 0 4px;
+  font-weight:700;
+  font-size: 1.28rem;
+}
+.subtitle{
+  text-align:center;
+  margin:0 0 10px;
+  color: var(--muted);
+}
+.bio{
+  text-align:center;
+  margin: 8px auto 12px;
+  line-height:1.55;
+  max-width: 44ch;          /* ANCHO DE LECTURA CÓMODO */
+}
+
+/* =========================================
+   CHIPS / ETIQUETAS
+   ========================================= */
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+  margin-bottom: 10px;
+}
+.chip{
+  padding:6px 10px;
+  font-size:.82rem;
+  border-radius:999px;
+  color:#cfefff;
+  background: rgba(46,203,255,.08);    /* CIAN MUY SUAVE */
+  border:1px solid rgba(46,203,255,.35);
+}
+
+/* =========================================
+   ENLACES PRINCIPALES (BOTONES)
+   ========================================= */
+.links{
+  display:grid;
+  gap:12px;
+  margin-top: 8px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  color:#fff;
+  background: var(--accent);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius:14px;
+  padding: 14px 16px;
+  min-height: 48px;              /* TARGET TÁCTIL */
+  font-weight:700;
+  letter-spacing:.2px;
+  box-shadow: 0 6px 16px rgba(122,92,245,.28);
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+}
+.btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(122,92,245,.36);
+}
+.btn:focus-visible{
+  outline: 2px solid var(--accent-2);  /* ANILLO CIAN */
+  outline-offset: 3px;
+}
+
+/* =========================================
+   CONTACTO RÁPIDO (EMAIL / WHATSAPP)
+   ========================================= */
+.contact{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.contact a{
+  text-decoration:none;
+  color:#e9f6ff;
+  background:#1a1a2b;
+  border:1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-weight:600;
+  transition: background .12s ease, transform .12s ease;
+}
+.contact a:hover{ 
+  background:#20203a; 
+  transform: translateY(-1px); 
+}
+.contact a:focus-visible{
+  outline: 2px solid var(--accent-2);
+  outline-offset: 2px;
+}
+
+/* =========================================
+   AJUSTES RESPONSIVE (TABLETA / ESCRITORIO)
+   ========================================= */
+@media (min-width:560px){
+  .title{ font-size:1.4rem; }
+  .bio{ font-size:1rem; }
+}
+/* =========================================
+   Footer / Pie de tarjeta
+   ========================================= */
+.foot{
+  text-align: center;
+  margin-top: 18px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.foot hr{
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 12px auto;
+  width: 60%;
+}
+
+.foot .made{
+  font-size: 0.78rem;
+  color: var(--accent-2);
+  font-weight: 600;
+}
